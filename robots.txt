@@ -1,0 +1,14 @@
+# https://www.hair-by-sadia.vercel.com/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block private or low-value pages from appearing in search results
+Disallow: /admin
+Disallow: /success
+Disallow: /booking-confirmed
+Disallow: /api/
+
+# Help crawlers find your sitemap (update with your actual domain)
+Sitemap: https://www.hair-by-sadia.vercel.com/sitemap.xml
