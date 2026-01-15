@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Scissors, ArrowRight, MapPin, Phone, Star, Clock, Globe } from 'lucide-react';
+import Heroimage from '../../assets/hero.avif';
+import Aboutimage from '../../assets/about.avif';
 
 function Home() {
   // Safe animation settings
@@ -63,7 +65,7 @@ function Home() {
           >
             <div className="relative z-10 aspect-square rounded-[2rem] overflow-hidden border-2 border-white/10 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1646244463384-59e69c8a4103?auto=format&fit=crop&q=80&w=1000" 
+                src={Heroimage} 
                 alt="Owner Sadiya" 
                 className="w-full h-full object-cover"
               />
@@ -102,9 +104,9 @@ function Home() {
             </motion.div>
             <motion.div {...fadeUp} className="order-1 lg:order-2 relative">
                <img 
-                src="https://images.unsplash.com/photo-1595476108010-b4d1f80d77d2?auto=format&fit=crop&q=80&w=1000" 
+                src={Aboutimage} 
                 alt="Styling" 
-                className="rounded-[2rem] shadow-2xl"
+                className="rounded-[2rem] shadow-2xl opacity-80"
                />
             </motion.div>
           </div>

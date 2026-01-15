@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scissors, Menu, X, Instagram, Calendar } from 'lucide-react';
+import { Link, NavLink } from 'react-router';
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,10 +17,11 @@ function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Styles', href: '#styles' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -36,31 +38,31 @@ function Header() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="p-2 bg-emerald-500 rounded-lg group-hover:rotate-12 transition-transform duration-300">
               <Scissors size={20} className="text-slate-950" />
             </div>
             <span className="text-lg font-black tracking-tighter uppercase text-white">
               Sadiya<span className="text-emerald-400">.</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
-                href={link.href}
+                to={link.href}
                 className="text-xs uppercase tracking-[0.2em] font-bold text-slate-300 hover:text-emerald-400 transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://instagram.com/hairbysadiya" className="text-slate-400 hover:text-rose-400 transition-colors">
+            <a href="https://instagram.com/hairbysadiya" className="text-slate-400 hover:text-rose-400 transition-colors" target='_blank'>
               <Instagram size={20} />
             </a>
             <button className="px-5 py-2.5 bg-white text-slate-950 text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-emerald-400 transition-all active:scale-95 flex items-center gap-2">
@@ -89,14 +91,14 @@ function Header() {
             className="absolute top-full left-6 right-6 mt-4 p-8 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl md:hidden flex flex-col gap-6 text-center"
           >
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-xl font-bold tracking-tight text-white hover:text-emerald-400"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <hr className="border-white/10" />
             <button className="w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase tracking-widest rounded-2xl">
