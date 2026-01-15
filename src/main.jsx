@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home/Home.jsx'
 import Notfound from './pages/Notfound/Notfound.jsx'
 import Mainlayout from './layouts/Mainlayout/Mainlayout.jsx'
+import Services from './pages/Services/Services.jsx'
 
 const root = createBrowserRouter([
   {
@@ -13,13 +14,21 @@ const root = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
+      },
+      {
+        path: '/services',
+        element: <Services />
+      },
+      {
+        path: '*',
+        element: <Notfound />
       }
     ]
   },
   {
     path: '*',
-    element: <Notfound/>,
+    element: <Notfound />,
   }
 ])
 
